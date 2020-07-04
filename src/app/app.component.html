@@ -1,10 +1,22 @@
 <mat-card>
-    <mat-card-title>Ted Talk</mat-card-title>
-    <mat-card-content>
-        <youtube-player videoId="5MgBikgcWnY" suggestedQuality="highres" [startSeconds]="'4'" [endSeconds]="8">
-        </youtube-player>
-    </mat-card-content>
-    <mat-card-footer>
-        <mat-toolbar></mat-toolbar>
-    </mat-card-footer>
+  <mat-card-title>Ted Talk</mat-card-title>
+  <mat-card-content>
+    <youtube-player #player
+      videoId="5MgBikgcWnY"
+      controls="0"
+      suggestedQuality="highres"
+      [startSeconds]="start"
+      [endSeconds]="end"
+      [showBeforeIframeApiLoads]="false"
+    >
+    </youtube-player>
+  </mat-card-content>
+  <mat-card-footer>
+    <mat-toolbar>
+      <button type="button" (click)="player.pauseVideo()">Pause</button>
+      <button type="button" (click)="player.playVideo()">Start</button>
+      <button type="button" (click)="rewind(15)">Back 15</button>
+      <button type="button" (click)="player.seekTo(player.getCurrentTime()+15, true)">Forward 15</button>
+    </mat-toolbar>
+  </mat-card-footer>
 </mat-card>

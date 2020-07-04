@@ -8,6 +8,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { YouTubePlayerModule } from "@angular/youtube-player";
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatSliderModule,
     YouTubePlayerModule,
